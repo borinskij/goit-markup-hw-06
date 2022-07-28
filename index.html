@@ -444,8 +444,9 @@
                   <li class="logo-tel"><a href="tel:+380991111111">+38 099 111 11 11</a></li>
                 </ul>
               </div>
+              </div>
             </address>
-          </div>
+          
           <div class="footer-social">
             <h3 class="footer-social-title">присоединяйтесь</h3>
             <ul class="footer-social-list">
@@ -479,13 +480,24 @@
               </li>
             </ul>
           </div>
+                       <div class="online-form">
+                <h2 class="online__title">Подпишитесь на рассылку</h2>
+                <div class="send">
+                <label for="mail" class="online-label"></label>
+                <input type="mailto" name="mail" id="mail-f" class="online-input" placeholder="E-mail"/>
+                <button class="online-bt">Подписаться  <svg class="icon-send" width="24px" height="24px">
+                  <use href='./image/symbol-defs-hover.svg#icon-send'></use>
+                </svg></button>
+               
+              </div>
+              </div>
         </div>
       </section>
     </footer>
 
     <!-- ====================== Model ==================== -->
 
-    <div class="backdrop ishidden" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="model">
         <button class="model-button" type="button" data-modal-close>
           <svg class="close" width="18px" height="18px">
@@ -496,15 +508,30 @@
         <form action="" class="model-form">
           <div class="model-field">
             <label for="name" class="model-label"> <span>Имя</span></label>
-            <input type="text" name="name" id="name" class="model-input" required />
+            <div class="imput-wrap">
+              <input type="text" name="name" id="name" class="model-input" required />
+              <svg width="18px" height="18px" class="model-icon">
+                <use href="./image/symbol-defs-hover.svg#icon-person"></use>
+              </svg>
+            </div>
           </div>
           <div class="model-field">
             <label for="tel" class="model-label">Телефон</label>
-            <input type="tel" name="tel" id="tel" class="model-input" />
+            <div class="imput-wrap">
+              <input type="tel" name="tel" id="tel" class="model-input" value="+380" />
+              <svg width="18px" height="18px" class="model-icon">
+                <use href="./image/symbol-defs-hover.svg#icon-phone"></use>
+              </svg>
+            </div>
           </div>
           <div class="model-field">
             <label for="mail" class="model-label">Почта</label>
-            <input type="email" name="mail" id="mail" class="model-input" />
+            <div class="imput-wrap">
+              <input type="email" name="mail" id="mail" class="model-input" />
+              <svg width="18px" height="18px" class="model-icon">
+                <use href="./image/symbol-defs-hover.svg#icon-email-black"></use>
+              </svg>
+            </div>
           </div>
           <div class="model-field">
             <label for="koment" class="model-koment">Комментарий</label>
@@ -515,8 +542,19 @@
               class="model-koment-text"
             ></textarea>
           </div>
+          <div class="model-field">
+            <input type="checkbox" 
+            class="input-check visually-hidden" 
+            name="privasy" 
+            value="try" 
+          id="privasy">
+            <label for="privasy" class="check-text">Соглашаюсь с рассылкой и принимаю  &nbsp <a href="#">Условия договора</a></label>
+          </div>
+
+          <butto type="submit" class="model-bt">Отправить</button>
+        
         </form>
-        <button type="submit" class="model-bt">Отправить</button>
+
       </div>
     </div>
     <!-- <script src="./js/modal.js"></script> -->

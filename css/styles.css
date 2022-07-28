@@ -108,6 +108,7 @@ a {
 
 /* логотип */
 .logo {
+  font-family: 'Raleway';
   color: #000000;
   font-size: 26px;
   line-height: 1.2;
@@ -754,6 +755,55 @@ border-radius: 4px; */
   background-color: var(--accent-text-color);
 }
 
+.online__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.online-input {
+  margin-top: 20px;
+  width: 358px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  color: #ffffff;
+  padding-left: 16px;
+}
+
+.online-bt {
+  width: 200px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-text-color);
+  color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+  padding-left: 29px;
+  margin-left: 10px;
+}
+
+.send {
+  display: flex;
+  align-items: flex-end;
+}
+
+.icon-send {
+  margin-left: 10px;
+  fill: #ffffff;
+}
 /* =======================================Portfolio========================================= */
 
 .header-portfolio {
@@ -897,13 +947,13 @@ border-radius: 4px; */
   background: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
-  /* transition-property: visibility, pointer-events, opacity;
-  transition-duration: 1250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  transition-property: cubic-bezier, visibility, pointer-events, opacity;
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .model {
-  transform: translate scale(0.1) (-50%, -100%);
+  transform: translate(-50%, -50%) scale(0.1);
 }
 
 .model {
@@ -916,7 +966,7 @@ border-radius: 4px; */
   border-radius: 4px;
   top: 50%;
   left: 50%;
-  transform: scale(1) translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   transition: 400ms linear;
   padding: 40px 40px;
 }
@@ -968,29 +1018,51 @@ border-radius: 4px; */
   border-radius: 4px;
   margin-bottom: 10px;
   margin-top: 4px;
-  padding-left: 16px;
-  padding-top: 12px;
   outline: none;
 }
 .model-koment-text::placeholder {
   color: rgba(117, 117, 117, 0.5);
   padding-left: 16px;
   padding-top: 12px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.imput-wrap {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+
+.model-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  margin: 0;
+}
 .model-input {
   width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
-  margin-top: 4px;
   padding-left: 40px;
   outline: none;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.model-input:focus:hover,
-.model-koment-text:focus:hover {
+.model-input:hover,
+.model-koment-text:hover {
+  border-color: var(--accent-text-color);
+}
+.model-input:focus + svg {
+  fill: var(--accent-text-color);
+}
+.model-input:focus,
+.model-koment-text:focus {
   border-color: var(--accent-text-color);
 }
 
@@ -1010,4 +1082,46 @@ border-radius: 4px; */
   border-radius: 4px;
   padding: 10px 56px;
   margin: auto;
+}
+
+.check-text {
+  color: var(--primary-text-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  /* justify-items: center; */
+  margin-left: 13px;
+}
+.check-text::before {
+  content: '';
+  width: 16px;
+  height: 15px;
+  border: #000000 2px solid;
+  border-radius: 2px;
+  margin-right: 7px;
+  transition-property: border-color;
+  transition-duration: 13250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-check:checked + .check-text::before {
+  background-color: var(--accent-text-color);
+  border: transparent;
+  background-image: url(../image/check.svg);
+  fill: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-check:focus + .check-text::before {
+  border-color: var(--accent-text-color);
+}
+
+.mmodel-koment-text:valid {
+  border-color: var(--accent-text-color);
+}
+.mmodel-koment-text:focus {
+  border-color: var(--accent-text-color);
 }
