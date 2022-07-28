@@ -9,6 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -16,7 +22,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -480,17 +485,41 @@
 
     <!-- ====================== Model ==================== -->
 
-    <div class="backdrop" data-modal is-hidden>
+    <div class="backdrop ishidden" data-modal>
       <div class="model">
         <button class="model-button" type="button" data-modal-close>
           <svg class="close" width="18px" height="18px">
             <use href="./image/symbol-defs-hover.svg#icon-close-black"></use>
           </svg>
-
-          <script src="./js/modal.js"></script>
-          <script src="./js/main.js"></script>
         </button>
+        <p class="model-titl">Оставьте свои данные, мы вам перезвоним</p>
+        <form action="" class="model-form">
+          <div class="model-field">
+            <label for="name" class="model-label"> <span>Имя</span></label>
+            <input type="text" name="name" id="name" class="model-input" required />
+          </div>
+          <div class="model-field">
+            <label for="tel" class="model-label">Телефон</label>
+            <input type="tel" name="tel" id="tel" class="model-input" />
+          </div>
+          <div class="model-field">
+            <label for="mail" class="model-label">Почта</label>
+            <input type="email" name="mail" id="mail" class="model-input" />
+          </div>
+          <div class="model-field">
+            <label for="koment" class="model-koment">Комментарий</label>
+            <textarea
+              name="koment"
+              id="koment"
+              placeholder="Введите текст"
+              class="model-koment-text"
+            ></textarea>
+          </div>
+        </form>
+        <button type="submit" class="model-bt">Отправить</button>
       </div>
     </div>
+    <!-- <script src="./js/modal.js"></script> -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
